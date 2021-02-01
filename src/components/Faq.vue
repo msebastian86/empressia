@@ -1,21 +1,26 @@
 <template>
   <section class="teleporada">
-      <div class="row">
+    <div class="grid-container">
+
+      <div class="row-lg-2">
         <div class="col col-left">
           <h2 v-text="headline" />
 
-          <a href="#">Sprawdź całe FAQ</a>
+          <div>
+            <a href="#">Sprawdź całe FAQ</a>
+          </div>
 
           <img src="http://placekitten.com/200/300" alt="Alt tag">
         </div>
         <div class="col col-right">
-          <ul class="faq-list">
+          <ul class="[ faq-list ] [ reset-list ]">
             <li v-for="(accordeon, index) in accordeons" :key="`${index} ${Math.random()}`">
               <Accordeon :title="accordeon.title" :text="accordeon.text" />
             </li>
           </ul>
         </div>
       </div>
+    </div>
   </section>
 </template>
 

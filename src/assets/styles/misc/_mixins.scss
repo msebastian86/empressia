@@ -6,8 +6,8 @@
 @mixin grid(
   $columns,
   $alignment: flex-start,
-  $gutter-horizontal: $gutter-width,
-  $gutter-vertical: $gutter-width
+  $gutter-horizontal: 16px,
+  $gutter-vertical: 16px
 ) {
   display: flex;
   flex-wrap: wrap;

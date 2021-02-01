@@ -1,12 +1,17 @@
 <template>
   <section class="main-text">
-      <div class="row">
-        <div class="col col-left">
-          <h1 v-text="headline" />
-          <div v-html="text" />
-        </div>
-        <div class="col col-right">
-          <img src="http://placekitten.com/200/300" alt="Alt tag">
+      <div class="grid-container">
+        <div class="row-lg-2">
+          <div class="col col-left">
+            <h1 v-text="headline" />
+            <div v-html="text" />
+
+            <a href="#" class="button button--primary">Zarezerwuj termin <i class="button__icon button__icon-radio"></i></a>
+            <a href="#" class="button button--ghost">Jak to działa?</a>
+          </div>
+          <div class="col col-right">
+            <img src="http://placekitten.com/200/300" alt="Alt tag">
+          </div>
         </div>
       </div>
   </section>

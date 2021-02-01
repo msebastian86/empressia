@@ -1,0 +1,43 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 6px 25px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  margin: 16px 16px 0 0;
+
+  &--primary {
+    background: $blue;
+    color: white;
+
+    &:hover {
+      background: darken($blue, 10%);
+      color: white;
+    }
+  }
+
+  &--ghost {
+    border-color: $blue;
+    background: transparent;
+    color: $blue;
+
+    &:hover {
+      background: $blue;
+      color: white;
+    }
+  }
+
+  &--invert {
+    border-color: transparent;
+    background: white;
+    color: $blue;
+
+    &:hover {
+      background: $gray-light;
+      color: $blue;
+    }
+  }
+}

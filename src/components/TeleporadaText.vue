@@ -1,13 +1,10 @@
 <template>
   <section class="teleporada">
-      <div class="row">
-        <div class="col col-left">
-          <h2 v-text="headline" />
-          <div v-html="text" />
-        </div>
-        <div class="col col-right">
-          <img src="http://placekitten.com/200/300" alt="Alt tag">
-        </div>
+      <div class="grid-container">
+        <h2 class="text-center text-lg-right" v-text="headline" />
+        <div v-html="text" />
+
+        <img src="http://placekitten.com/200/300" alt="Alt tag">
       </div>
   </section>
 </template>

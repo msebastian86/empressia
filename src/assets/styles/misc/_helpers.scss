@@ -1,0 +1,66 @@
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+$sides: (left, center, right, justify);
+
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: #{$value}) {
+    .d-#{$breakpoint}-none {
+      display: none;
+    }
+
+    .d-#{$breakpoint}-block {
+      display: block;
+    }
+
+    .d-#{$breakpoint}-flex {
+      display: flex;
+    }
+
+    .d-#{$breakpoint}-inline-flex {
+      display: inline-flex;
+    }
+
+    @each $side in $sides {
+      .text-#{$breakpoint}-#{$side} {
+        text-align: $side;
+      }
+    }
+  }
+}
+
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    margin: 0;
+    padding: 0;
+  }
+}

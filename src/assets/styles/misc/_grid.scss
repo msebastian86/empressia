@@ -1,0 +1,44 @@
+$breakpoints: (
+  sm: 0,
+  md: 650px,
+  lg: 1024px,
+);
+
+$container-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 1170px,
+);
+
+$gutters: (
+  sm: 16,
+  md: 16,
+  lg: 16,
+);
+
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: #{$value}) {
+    .grid-container {
+      @if map-get($container-widths, $breakpoint) == 100% {
+        max-width: 100%;
+      } @else {
+        max-width: map-get($container-widths, $breakpoint) +
+          map-get($gutters, $breakpoint) *
+          2;
+      }
+
+      padding-left: map-get($gutters, $breakpoint) + px;
+      padding-right: map-get($gutters, $breakpoint) + px;
+    }
+
+    .row-#{$breakpoint}-2 {
+      @include grid(2, flex-start);
+    }
+  }
+}
