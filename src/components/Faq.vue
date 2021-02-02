@@ -3,14 +3,14 @@
     <div class="grid-container">
 
       <div class="row-lg-2">
-        <div class="col col-left">
-          <h2 v-text="headline" />
+        <div class="col col-left [ text-center text-lg-left ]">
+          <h3 v-text="headline" class="[ text-dark ]" />
 
           <div>
-            <a href="#">Sprawdź całe FAQ</a>
+            <a href="#" class="button button--ghost">Sprawdź całe FAQ</a>
           </div>
 
-          <img src="http://placekitten.com/200/300" alt="Alt tag">
+          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag">
         </div>
         <div class="col col-right">
           <ul class="[ faq-list ] [ reset-list ]">

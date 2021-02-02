@@ -1,5 +1,19 @@
-$blue: #4432ff;
-$green: #14caff;
-$dark: #0e0e0e;
-$gray-medium: #ececec;
-$gray-light: #f4f7f9;
+$colors: (
+  white: #ffffff,
+  blue: #4432ff,
+  blue-text: #4a4764,
+  green: #14caff,
+  dark: #0e0e0e,
+  gray-medium: #ececec,
+  gray-light: #f4f7f9,
+);
+
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
