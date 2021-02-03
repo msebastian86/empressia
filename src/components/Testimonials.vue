@@ -116,7 +116,7 @@ export default {
 
   .testimonials {
     padding: 128px 0 96px 0;
-    max-width: 1680px;
+    max-width: $blocks-max-width;
     margin: 0 auto;
     overflow: hidden;
   }
