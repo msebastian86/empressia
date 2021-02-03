@@ -1,6 +1,6 @@
 @import url("https://p.typekit.net/p.css?s=1&k=ywa6rkc&ht=tk&f=37148.37150&a=5757810&app=typekit&e=css");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap");
-@import url(//db.onlinewebfonts.com/c/344d17417b87d35e88d9df15bea12e2e?family=SFNSDisplay);
+// @import url(//db.onlinewebfonts.com/c/344d17417b87d35e88d9df15bea12e2e?family=SFNSDisplay);
 
 @font-face {
   font-family: "all-round-gothic";
@@ -33,7 +33,9 @@
 }
 
 .font-sfnsd {
-  font-family: "SFNSDisplay";
+  // TODO ADD PROPPER FONT
+  // font-family: "SFNSDisplay";
+  font-family: "Comfortaa";
 }
 
 body {
