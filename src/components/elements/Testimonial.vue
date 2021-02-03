@@ -3,7 +3,7 @@
       <div class="testimonial__top">
         <div class="top-top">
           <div class="testimonial__rank">
-            {{ testimonial.rank }}
+            <Rank :rank="testimonial.rank" />
           </div>
           <div class="testimonial__date">
             {{ testimonial.date | dateFormat('DD MMMM YYYY') }}
@@ -23,11 +23,16 @@
 </template>
 
 <script>
+import Rank from './Rank'
+
 export default {
   name: 'Testimonial',
   props: {
     testimonial: Object,
   },
+  components: {
+    Rank
+  }
 }
 </script>
 

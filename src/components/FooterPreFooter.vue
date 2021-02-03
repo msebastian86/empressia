@@ -7,7 +7,7 @@
       <div class="pre-footer__right">
         <div class="right-wrapper">
           <div class="[ right-wrapper__left ] [ d-none d-lg-flex ]">
-            <strong>RANK</strong> <small>5.0 (163 opinie) na</small> <img src="../assets/images/icons/logos/logo_znanylekarzColor.png" class="logo-right" />
+            <Rank :rank="5" :color="'green-dark'" /> <small>5.0 (163 opinie) na</small> <img src="../assets/images/icons/logos/logo_znanylekarzColor.png" class="logo-right" alt="Znany lekarz logo" />
           </div>
           <div class="right-wrapper__right">
             <div class="icons">
@@ -28,13 +28,15 @@
 import LogoEmpressia from '../assets/images/icons/logos/mark_empressiaColor.svg';
 import FacebookLogo from '../assets/images/icons/social/facebook.svg';
 import InstagramLogo from '../assets/images/icons/social/instagram.svg';
+import Rank from './elements/Rank'
 
 export default {
   name: 'HelloWorld',
   components: {
     LogoEmpressia,
     FacebookLogo,
-    InstagramLogo
+    InstagramLogo,
+    Rank
   },
 }
 </script>
@@ -67,7 +69,9 @@ hr {
 .right-wrapper {
   .right-wrapper__left {
     small {
-      margin: 0 3px;
+      margin: 2px 5px 0 5px;
+      display: inline-block;
+      line-height: 1;
     }
   }
 }
@@ -85,7 +89,7 @@ hr {
 
   .right-wrapper {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
 
     .right-wrapper__left {
