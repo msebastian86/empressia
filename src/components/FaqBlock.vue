@@ -1,9 +1,8 @@
 <template>
-  <section class="teleporada">
+  <section class="faq-block">
     <div class="grid-container">
-
       <div class="row-lg-2">
-        <div class="col col-left [ text-center text-lg-left ]">
+        <div class="[ col-left ] [ text-center text-lg-left ]">
           <h3 v-text="headline" class="[ text-dark ]" />
 
           <div>
@@ -12,7 +11,7 @@
 
           <img src="../assets/images/home/illustration-faq.png" alt="Alt tag">
         </div>
-        <div class="col col-right">
+        <div class="[ col-right ]">
           <ul class="[ faq-list ] [ reset-list ]">
             <li v-for="(accordeon, index) in accordeons" :key="`${index} ${Math.random()}`">
               <Accordeon :title="accordeon.title" :text="accordeon.text" />
@@ -28,7 +27,7 @@
 import Accordeon from './elements/Accordeon'
 
 export default {
-  name: 'MainText',
+  name: 'FaqBlock',
   components: {
     Accordeon
   },
@@ -37,7 +36,7 @@ export default {
       headline: 'Najczęściej zadawane pytania',
       accordeons: [
         { title: 'Jakie są korzyści teleporady lekarskiej na naszym serwisie?', text: '<p><strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit</strong></p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis incidunt voluptatem temporibus numquam odit, delectus maxime consequatur harum cum?</p>'},
-        { title: 'Jak zrealizuję konsultację?', text: '<p><strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit</strong></p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis incidunt voluptatem temporibus numquam odit, delectus maxime consequatur harum cum?</p>'},
+        { title: 'Czy jest możliwość odwołania wcześniej zarezerwowanej wizyty?', text: '<p>W przypadkach losowych gdy nie mogą Państwo zrealizować wizyty w umówionym terminie istnieje możliwość zmiany daty wizyty bądź jej odwołania do 24h przed planowym terminem. Dokonają Państwo tego za pomocą linka przesłanego w potwierdzeniu rezerwacji na podany przez Państwa adres e-mail.</p>'},
         { title: 'Co się dzieje w przypadku problemów technicznych?', text: '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis incidunt voluptatem temporibus numquam odit, delectus maxime consequatur harum cum?</p>'},
       ]
     }
@@ -47,5 +46,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.faq-block {
+    padding: 40px 0 32px 0;
+}
 
+@include breakpoint-lg {
+  .faq-block {
+    padding: 136px 0 128px 0;
+  }
+
+  .col-left {
+    padding-right: 32px;
+
+    h4 {
+      max-width: 440px;
+    }
+  }
+}
 </style>

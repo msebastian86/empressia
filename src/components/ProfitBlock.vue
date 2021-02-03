@@ -1,23 +1,28 @@
 <template>
-  <section class="teleporada">
+  <section class="profit-block">
       <div class="grid-container">
         <h2 class="[ headline ] [ text-center text-dark font-700 ]" v-text="headline" />
         <div v-html="text" class="text-center" />
 
-        <img src="http://placekitten.com/200/300" alt="Alt tag">
+        <SectionGfx class="section-bg-gfx" />
       </div>
   </section>
 </template>
 
 <script>
+import SectionGfx from '../assets/images/home/section-profit--background.svg';
+
 export default {
-  name: 'MainText',
+  name: 'ProfitBlock',
   data() {
     return {
       headline: 'Skorzystaj z najszybciej rozwijającej się gałęzi medycyny',
       text: '<p>Teleporada lekarska na naszym serwisie oznacza potwierdzoną skuteczność terapeutyczną, oszczędność czasu i pieniędzy.</p>'
     }
   },
+  components: {
+    SectionGfx
+  }
 }
 </script>
 
@@ -25,5 +30,26 @@ export default {
 <style scoped lang="scss">
 .headline {
   margin-bottom: 24px;
+}
+
+.profit-block {
+  position: relative;
+
+  .section-bg-gfx {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+
+@include breakpoint-lg {
+  .profit-block {
+    min-height: 831px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

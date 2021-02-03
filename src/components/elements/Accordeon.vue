@@ -53,7 +53,7 @@ export default {
         min-height: 56px;
         border-radius: 4px;
         text-decoration: none;
-        padding: 16px;
+        padding: 16px 38px 16px 16px;
         font-weight: bold;
         position: relative;
 
@@ -70,7 +70,8 @@ export default {
     }
 
     .accordeon__content {
-        padding: 16px;
+        padding: 0 16px 16px 16px;
+        border-radius: 4px;
 
         &> :last-child {
             margin-bottom: 0;
@@ -101,6 +102,14 @@ export default {
                     fill: white;
                 }
             }
+
+            &:hover {
+                background: darken(map-get($colors, blue), 10%);
+            }
+        }
+
+        .accordeon__content {
+            background: white;
         }
 
         &[aria-closed="false"] {
@@ -122,15 +131,15 @@ export default {
     .accordeon {
         &__title {
             min-height: 92px;
-            padding: 32px;
+            padding: 32px 60px 32px 32px;
 
             .pointer {
-                right: 32px;
+                right: 27px;
             }
         }
 
         .accordeon__content {
-            padding: 32px;
+            padding: 0px 32px 32px 32px;
             box-shadow: 24px 32px 54px rgba(39,33,99,0.12);
         }
     }

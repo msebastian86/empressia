@@ -27,7 +27,7 @@ import Video from '../assets/images/icons/seo/video.svg';
 
 
 export default {
-  name: 'IconRows',
+  name: 'IconBlock',
   components: {
     Accordeon,
     Diagnosis,

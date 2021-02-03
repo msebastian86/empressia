@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'MainText',
+  name: 'MainTextBlock',
   data() {
     return {
       headline: 'Konsultacje z lekarzem',

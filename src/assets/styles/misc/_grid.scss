@@ -38,7 +38,11 @@ $gutters: (
     }
 
     .row-#{$breakpoint}-2 {
-      @include grid(2, flex-start);
+      @include grid(2, flex-start, $gutter-horizontal: 0px);
+    }
+
+    .row-#{$breakpoint}-2-gutter {
+      @include grid(2, flex-start, $gutter-horizontal: 16px);
     }
   }
 }

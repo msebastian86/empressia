@@ -2,11 +2,14 @@
     <div id="page-home">
         <Header :menuItems="menuItems"/>
         <main>
-          <MainText />
-          <TeleporadaText />
-          <Faq />
-          <Testimonials />
-          <IconRows />
+          <MainTextBlock />
+          <ProfitBlock />
+          <div class="grid-container">
+            <hr class="m-0">
+          </div>
+          <FaqBlock />
+          <TestimonialsBlock />
+          <IconBlock />
           <NewsletterBlock />
         </main>
         <Footer :menuItems="menuItems" />
@@ -15,11 +18,11 @@
 
 <script>
 import Header from '../components/Header.vue'
-import MainText from '../components/MainText.vue'
-import TeleporadaText from '../components/TeleporadaText.vue'
-import Faq from '../components/Faq.vue'
-import Testimonials from '../components/Testimonials.vue'
-import IconRows from '../components/IconRows.vue'
+import MainTextBlock from '../components/MainTextBlock.vue'
+import ProfitBlock from '../components/ProfitBlock.vue'
+import FaqBlock from '../components/FaqBlock.vue'
+import TestimonialsBlock from '../components/TestimonialsBlock.vue'
+import IconBlock from '../components/IconBlock.vue'
 import NewsletterBlock from '../components/NewsletterBlock.vue'
 import Footer from '../components/Footer.vue'
 
@@ -27,11 +30,11 @@ export default {
   name: 'Home',
   components: {
     Header,
-    MainText,
-    TeleporadaText,
-    Faq,
-    Testimonials,
-    IconRows,
+    MainTextBlock,
+    ProfitBlock,
+    FaqBlock,
+    TestimonialsBlock,
+    IconBlock,
     NewsletterBlock,
     Footer
   },

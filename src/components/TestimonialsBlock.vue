@@ -25,7 +25,7 @@ import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 
 export default {
-  name: 'MainText',
+  name: 'TestimonialsBlock',
   components: {
     Testimonial
   },
