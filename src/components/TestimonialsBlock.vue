@@ -4,7 +4,7 @@
         <h3 v-text="headline" class="[ headline ] [ text-center text-dark ]" />
       </div>
 
-      <div class="swiper-container">
+      <div class="[ swiper-container--testimonials swiper-container ]">
         <div class="swiper-wrapper">
           <div v-for="(testimonial, index) in testimonials" :key="`${index} ${Math.random()}`" class="swiper-slide">
             <Testimonial :testimonial="testimonial" />
@@ -20,8 +20,7 @@
 
 <script>
 import Testimonial from './elements/Testimonial';
-// import Swiper from 'swiper';
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
 export default {
@@ -37,6 +36,7 @@ export default {
         { rank: 3, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. dolor, sit amet consectetur dolor, sit amet consectetur fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
         { rank: 5, date: new Date(), text: 'Lorem dolor, sit amet consectetur dolor, sit amet consectetur dolor, sit amet consectetur ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
         { rank: 4, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
+        { rank: 2, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
         { rank: 5, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
       ]
     }
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     initSwiper() {
-      this.swiper = new Swiper('.swiper-container', {
+      this.swiper = new Swiper('.swiper-container--testimonials', {
         slidesPerView: 1,
         speed: 500,
         loop: true,
@@ -65,6 +65,11 @@ export default {
             spaceBetween: 32,
           }
         },
+        on: {
+          slideChange: function() {
+            console.log('current ' + this.realIndex);
+          }
+        }
       });
     }
   },
@@ -94,7 +99,7 @@ export default {
   position: static;
   display: block;
   width: auto;
-  margin: 32 auto 0 auto;
+  margin: 32px auto 0 auto;
 
   /deep/ .swiper-pagination-bullet {
     width: 10px;
@@ -119,6 +124,28 @@ export default {
     max-width: $blocks-max-width;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 10%;
+      top: 0;
+      z-index: 2;
+      max-width: 128px;
+      pointer-events: none;
+    }
+
+    &:before {
+      left: 0;
+      background: linear-gradient(to left, transparent, rgba(white, 0.32), white);
+    }
+
+    &:after {
+      right: 0;
+      background: linear-gradient(to right, transparent, rgba(white, 0.32), white);
+    }
   }
 
   .swiper-container {

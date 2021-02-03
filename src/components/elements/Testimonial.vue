@@ -50,9 +50,9 @@ export default {
 
    .testimonial__top {
      .top-top {
-       display: flex;
-      align-content: center;
-      justify-content: space-between;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
      }
    }
 
@@ -60,6 +60,9 @@ export default {
       color: rgba(map-get($colors, dark), 0.32);
       font-size: 14px;
       line-height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
    .testimonial__text {

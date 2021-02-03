@@ -11,6 +11,7 @@
           <TestimonialsBlock />
           <IconBlock />
           <NewsletterBlock />
+          <CookiesBlock />
         </main>
         <Footer :menuItems="menuItems" />
     </div>
@@ -25,6 +26,7 @@ import TestimonialsBlock from '../components/TestimonialsBlock.vue'
 import IconBlock from '../components/IconBlock.vue'
 import NewsletterBlock from '../components/NewsletterBlock.vue'
 import Footer from '../components/Footer.vue'
+import CookiesBlock from '../components/CookiesBlock.vue'
 
 export default {
   name: 'Home',
@@ -36,7 +38,8 @@ export default {
     TestimonialsBlock,
     IconBlock,
     NewsletterBlock,
-    Footer
+    Footer,
+    CookiesBlock
   },
   props: {
     msg: String
