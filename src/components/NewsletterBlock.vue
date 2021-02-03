@@ -6,8 +6,12 @@
 
           <a href="#" class="button button--invert">Zarezerwuj termin już teraz</a>
 
-          <ul class="[ text-list ] [ d-none d-lg-block ]">
+          <ul class="[ text-list ] [ reset-list ] [ d-none d-lg-block ]">
             <li v-for="(text, index) in textList" :key="index">
+              <div class="check">
+                <CheckSvg/>
+              </div>
+
               {{ text }}
             </li>
           </ul>
@@ -15,7 +19,9 @@
       </div>
   </section>
 </template>
+
 <script>
+import CheckSvg from '../assets/images/icons/ui/check.svg';
 
 export default {
   name: 'NewsletterBlock',
@@ -33,6 +39,9 @@ export default {
       ]
     }
   },
+  components: {
+    CheckSvg
+  }
 }
 </script>
 
@@ -46,21 +55,50 @@ export default {
 
 @include breakpoint-lg {
   .newsletter-body {
-    padding: 80px 50% 80px 80px;
+    padding: 80px  (5/12)*100% 80px 80px;
     border-radius: 16px;
     position: relative;
     overflow: hidden;
     box-shadow: 24px 32px 56px 0 rgba(39,33,99,0.12);
 
+    h2 {
+      max-width: 469px;
+      margin-bottom: 16px;
+    }
+
 
     .text-list {
       position: absolute;
-      left: 50%;
+      left: calc((7/12)*100% + 16px);
       top: 50%;
       transform: translateY(-50%);
 
       > li{
-        margin: 16px 0;
+        margin: 18px 0;
+        position: relative;
+        padding-left: 44px;
+
+        .check {
+          width: 32px;
+          height: 32px;
+          border: 3px solid rgba(white, 0.16);
+          border-radius: 50%;
+          position: absolute;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+
+          svg {
+            transform: scale(1.2);
+
+            path {
+              fill: white;
+            }
+          }
+        }
       }
     }
 
@@ -69,19 +107,19 @@ export default {
       position: absolute;
       width: 50%;
       height: 50%;
-      left: 50%;
+      left: (7/12)*100%;
       z-index: 2;
       pointer-events: none;
     }
 
     &:before {
       top: 0;
-      background: linear-gradient(map-get($colors, blue), transparent);
+      background: linear-gradient(map-get($colors, blue), rgba(map-get($colors, blue), 0.75), transparent);
     }
 
     &:after {
       bottom: 0;
-      background: linear-gradient(transparent, map-get($colors, blue));
+      background: linear-gradient(transparent, rgba(map-get($colors, blue), 0.75), map-get($colors, blue));
 
     }
   }
