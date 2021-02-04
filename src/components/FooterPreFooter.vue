@@ -69,7 +69,7 @@ hr {
 .right-wrapper {
   .right-wrapper__left {
     small {
-      margin: 2px 5px 0 5px;
+      margin: 2px 10px 0 10px;
       display: inline-block;
       line-height: 1;
     }

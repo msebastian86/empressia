@@ -48,9 +48,11 @@ export default {
       return {
         menuItems: [
             {title: 'O mnie', link: '#' },
-            {title: 'O mnie', link: '#' },
-            {title: 'O mnie', link: '#' },
-            {title: 'O mnie', link: '#' },
+            {title: 'Opinie', link: '#' },
+            {title: 'FAQ', link: '#' },
+            {title: 'Galeria', link: '#' },
+            {title: 'Blog', link: '#' },
+            {title: 'Kontakt', link: '#' },
         ]
       }
   },

@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueFilterDateFormat from "@vuejs-community/vue-filter-date-format";
+import VueObserveVisibility from "vue-observe-visibility";
+Vue.use(VueObserveVisibility);
 
 Vue.use(VueFilterDateFormat, {
   dayOfWeekNames: [

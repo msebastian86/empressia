@@ -7,7 +7,7 @@
         <nav class="footer-main__bottom-navigation">
           <ul class="menu">
             <li v-for="(item, index) in menuItems">
-              <a :href="item.link" v-text="item.title" :title="item.title" />
+              <a :href="item.link" v-text="item.title" />
             </li>
           </ul>
         </nav>
@@ -19,7 +19,7 @@
 
           <ul class="menu-side">
             <li v-for="(item, index) in nav1.elements">
-              <a href="#" v-text="item" :title="item" />
+              <a href="#" v-text="item" />
             </li>
           </ul>
         </nav>
@@ -29,7 +29,7 @@
 
           <ul class="menu-side">
             <li v-for="(item, index) in nav2.elements">
-              <a href="#" v-text="item" :title="item" />
+              <a href="#" v-text="item" />
             </li>
           </ul>
         </nav>

@@ -12,9 +12,9 @@
         <p v-text="testimonial.text" class="testimonial__text"/>
       </div>
 
-
-      <cite class="testimonial__cite">
+      <cite class="testimonial__cite" ref="cite">
         <div class="img-wrapper">
+          <EyeSvg class="img-wrapper__cover" />
           <img :src="testimonial.avatar" alt="avatar alt">
         </div>
         <p v-text="testimonial.name" />
@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import Rank from './Rank'
+import Rank from './Rank';
+import EyeSvg from '../../assets/images/icons/ui/eye.svg';
 
 export default {
   name: 'Testimonial',
@@ -31,7 +32,8 @@ export default {
     testimonial: Object,
   },
   components: {
-    Rank
+    Rank,
+    EyeSvg
   }
 }
 </script>
@@ -87,6 +89,18 @@ export default {
         overflow: hidden;
         position: relative;
         margin: 0 16px 0 0;
+        cursor: pointer;
+
+        .img-wrapper__cover {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 3;
+          will-change: transform;
+          transition: transform 0.6s ease;
+        }
 
         img {
           position: absolute;
@@ -97,6 +111,16 @@ export default {
           width: 100%;
           min-height: 100%;
         }
+
+        &:hover {
+          .img-wrapper__cover {
+            transform: translateX(-105%);
+          }
+
+          + p {
+            opacity: 1;
+          }
+        }
       }
 
       p {
@@ -104,6 +128,10 @@ export default {
         margin: 0;
         font-style: normal;
         color: map-get($colors, dark);
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0.6s ease;
+        transition-delay: 0.15s;
       }
 
       :last-child {

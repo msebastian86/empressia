@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" ref="sticky-header">
       <div class="grid-container">
         <nav class="header__navigation-wrapper">
           <div class="header__navigation-left">
@@ -30,15 +30,45 @@ export default {
   },
   components: {
     LogoSvg
-  }
+  },
+  mounted() {
+    this.stickyHeaderEvents();
+  },
+  methods: {
+    stickyHeaderEvents() {
+      const headerElement = this.$refs['sticky-header'];
+
+      const observer = new IntersectionObserver(
+        ([e]) => {
+          e.target.classList.toggle('is-stuck', e.intersectionRatio < 1);
+        },
+        {threshold: [1]}
+      );
+
+      observer.observe(headerElement)
+    }
+  },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
+
 .header {
   padding: 20px 0;
+  position: sticky;
+  top: -1px; // observer hack
+  width: 100%;
+  background: white;
+  z-index: map-get($zindex, sticky-menu);
+  transition: border 350ms ease;
+  will-change: border;
+  border-bottom: 0 solid transparent;
+
+  &.is-stuck {
+    border-bottom: 1px solid rgba(map-get($colors, dark), 0.06);
+  }
 }
 
 .menu {

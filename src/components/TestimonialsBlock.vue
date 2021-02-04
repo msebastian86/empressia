@@ -29,7 +29,7 @@ import 'swiper/swiper-bundle.css';
 export default {
   name: 'TestimonialsBlock',
   components: {
-    Testimonial
+    Testimonial,
   },
   data() {
     return {
@@ -53,7 +53,7 @@ export default {
         slidesPerView: 1,
         speed: 500,
         loop: true,
-        passiveListeners: false,
+        passiveListeners: true,
         observer: true,
         observeParents: true,
         spaceBetween: 16,
@@ -66,6 +66,7 @@ export default {
             centeredSlides: true,
             slidesPerView: 5,
             spaceBetween: 32,
+            loopAdditionalSlides: 5,
           }
         },
         on: {
