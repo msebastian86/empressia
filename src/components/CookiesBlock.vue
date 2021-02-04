@@ -11,6 +11,7 @@
 
 <script>
 import CloseSvg from '../assets/images/icons/ui/close.svg';
+import Cookies from 'js-cookie';
 
 export default {
   name: 'CookiesBlock',
@@ -24,14 +25,15 @@ export default {
   },
   methods: {
     initCookies() {
-      if (!localStorage.getItem('cookies_closed')) {
+      if (!Cookies.get('cookies-closed')) {
         this.isMsgVisible = true;
       }
     },
     closeCookie(e) {
       e.preventDefault();
       this.$el.remove();
-      localStorage.setItem('cookies_closed', true);
+      const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+      Cookies.set('cookies-closed', true, { expires: inFifteenMinutes })
     }
   },
   components: {

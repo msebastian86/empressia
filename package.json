@@ -10,6 +10,7 @@
   "dependencies": {
     "@vuejs-community/vue-filter-date-format": "^1.6.3",
     "core-js": "^3.6.5",
+    "js-cookie": "^2.2.1",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.6"
   },
