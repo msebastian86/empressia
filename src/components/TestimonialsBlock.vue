@@ -12,8 +12,11 @@
         </div>
       </div>
 
-      <div class="grid-container">
-        <div class="[ swiper-pagination swiper-pagination--testimonials ]" />
+      <div class="[ grid-container ] [ text-center ]">
+        <div class="swiper-pagination-container">
+          <div class="swiper-pagination-dot"></div>
+          <div class="[ swiper-pagination swiper-pagination--testimonials ]" />
+        </div>
       </div>
   </section>
 </template>
@@ -66,9 +69,11 @@ export default {
           }
         },
         on: {
-          slideChange: function() {
-            console.log('current ' + this.realIndex);
-          }
+          slideChangeTransitionStart: function() {
+            const bulletSpacing = 18;
+            const pagination = document.querySelector('.swiper-pagination-dot');
+            pagination.style.transform = `translateX(${this.realIndex * bulletSpacing}px)`;
+          },
         }
       });
     }
@@ -78,6 +83,65 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+.swiper-container--testimonials {
+  margin: 0 0 40px 0;
+}
+
+.swiper-pagination-container {
+  position: relative;
+  width: auto;
+  display: inline-flex;
+
+  .swiper-pagination-dot{
+    outline: none;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: map-get($colors, blue);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transition: transform 0.8s cubic-bezier(0.71, 0.01, 0.29, 0.97);
+  }
+
+  .swiper-pagination--testimonials {
+    z-index: 0;
+    background: transparent;
+    white-space: nowrap;
+    line-height: 0;
+    margin: 0 0 40px 0;
+
+    /deep/ .swiper-pagination-bullet{
+      outline: none;
+      margin: 0 4px;
+      width: 10px;
+      height: 10px;
+      background: rgba(map-get($colors, dark), .4);
+      transition: background-color 0.4s cubic-bezier(0.71, 0.01, 0.29, 0.97);
+      // transition-delay: 0.1s;
+
+      &-active {
+        background-color: map-get($colors, blue);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 .headline {
   margin-bottom: 32px;
 }
@@ -95,24 +159,6 @@ export default {
     }
 }
 
-.swiper-pagination--testimonials {
-  position: static;
-  display: block;
-  width: auto;
-  margin: 32px auto 0 auto;
-
-  /deep/ .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    margin: 0 4px;
-    background: rgba(map-get($colors, dark), 0.08);
-    opacity: 1;
-
-    &.swiper-pagination-bullet-active {
-      background: map-get($colors, blue);
-    }
-  }
-}
 
 @include breakpoint-lg {
   .headline {
@@ -155,8 +201,8 @@ export default {
     margin-right: -20%;
   }
 
-  .swiper-pagination--testimonials {
-    margin-top: 56px;
+  .swiper-container--testimonials {
+    margin-bottom: 56px;
   }
 }
 </style>
