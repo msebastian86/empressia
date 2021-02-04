@@ -71,4 +71,10 @@ export default {
     }
   }
 }
+
+@include breakpoint-lg {
+  .main-text-block {
+    overflow-x: hidden;
+  }
+}
 </style>

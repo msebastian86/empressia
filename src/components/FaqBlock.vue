@@ -51,6 +51,7 @@ export default {
 @include breakpoint-lg {
   .faq-block {
     padding: 136px 0 128px 0;
+    overflow-x: hidden;
   }
 
   .col-left {
