@@ -50,6 +50,11 @@
   margin: 0;
 }
 
+.m-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 $sides: (left, center, right, justify);
 
 @each $breakpoint, $value in $breakpoints {

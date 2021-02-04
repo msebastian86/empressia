@@ -1,7 +1,7 @@
 <template>
-  <section class="main-text">
+  <section class="main-text-block">
       <div class="grid-container">
-        <div class="row-lg-2">
+        <div class="row-main">
           <div class="col col-left">
             <h1 v-text="headline" class="[ font-700 text-dark ]" />
             <div v-html="text" class="text" />
@@ -10,7 +10,7 @@
             <a href="#" class="button button--ghost">Jak to działa?</a>
           </div>
           <div class="col col-right">
-            <img src="../assets/images/home/illustration-hero.png" alt="Alt tag">
+            <img src="../assets/images/home/illustration-hero.png" alt="Alt tag" class="block-image">
           </div>
         </div>
       </div>
@@ -41,8 +41,34 @@ export default {
 }
 
 @include breakpoint-lg {
+  .main-text-block {
+    padding: 101px 0 160px;
+  }
+
   .text {
     margin-bottom: 56px;
+  }
+
+  .row-main {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+
+    .col-left {
+      flex: 0 0 (5/12)*100%;
+    }
+
+    .col-right {
+      flex: 0 0 (7/12)*100%;
+      position: relative;
+
+      .block-image {
+        position: absolute;
+        width: 100%;
+        max-width: 696px;
+        right: -11.5%;
+      }
+    }
   }
 }
 </style>

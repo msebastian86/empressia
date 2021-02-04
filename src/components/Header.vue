@@ -1,16 +1,20 @@
 <template>
   <header class="header">
       <div class="grid-container">
-        <nav class="header-navigation-wrapper">
-          <a href="/" title="Home"><LogoSvg alt="Logo" class="logo" /></a>
+        <nav class="header__navigation-wrapper">
+          <div class="header__navigation-left">
+            <a href="/" title="Home"><LogoSvg alt="Logo" class="logo" /></a>
 
-          <ul class="menu">
-            <li v-for="(item, index) in menuItems" :key="`${index} ${Math.random()}`">
-              <a :href="item.link" :title="item.title" v-text="item.title" />
-            </li>
-          </ul>
+            <ul class="menu">
+              <li v-for="(item, index) in menuItems" :key="`${index} ${Math.random()}`">
+                <a :href="item.link" :title="item.title" v-text="item.title" />
+              </li>
+            </ul>
+          </div>
 
-          <a href="#" class="[ navigation__button ] [ button button--primary button--medium ]">Zapisz się na wizytą on-line</a>
+          <div class="header__navigation-right">
+            <a href="#" class="[ navigation__button ] [ button button--primary button--medium ]">Zapisz się na wizytą on-line</a>
+          </div>
         </nav>
       </div>
   </header>
@@ -45,7 +49,7 @@ export default {
 
   li {
     margin: 0 24px 0 0;
-    padding: 0;
+    padding: 1px 0 0 0;
 
     a {
       color: map-get($colors, dark);
@@ -61,12 +65,21 @@ export default {
   }
 }
 
-.header-navigation-wrapper {
+.header__navigation-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-weight: no-wrap;
+
+  .header__navigation-left {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    > * {
+      margin-right: 16px;
+    }
+  }
 }
 
 .navigation__button {
@@ -81,6 +94,14 @@ export default {
   .logo {
     width: 100%;
     max-width: 256px;
+  }
+
+  .header__navigation-wrapper {
+    .header__navigation-left {
+      > * {
+        margin-right: 48px;
+      }
+    }
   }
 }
 </style>

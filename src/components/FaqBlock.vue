@@ -5,11 +5,9 @@
         <div class="[ col-left ] [ text-center text-lg-left ]">
           <h3 v-text="headline" class="[ text-dark ]" />
 
-          <div>
-            <a href="#" class="button button--ghost">Sprawdź całe FAQ</a>
-          </div>
+          <a href="#" class="button button--ghost">Sprawdź całe FAQ</a>
 
-          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag">
+          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag" class="block-image">
         </div>
         <div class="[ col-right ]">
           <ul class="[ faq-list ] [ reset-list ]">
@@ -57,6 +55,12 @@ export default {
 
   .col-left {
     padding-right: 32px;
+
+    .block-image {
+      max-width: 100%;
+      max-width: 657px;
+      margin-left: -11.5%;
+    }
 
     h4 {
       max-width: 440px;

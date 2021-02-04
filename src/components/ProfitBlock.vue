@@ -1,8 +1,8 @@
 <template>
   <section class="profit-block">
       <div class="grid-container">
-        <h2 class="[ headline ] [ text-center text-dark font-700 ]" v-text="headline" />
-        <div v-html="text" class="text-center" />
+        <h2 class="[ headline ] [ text-center text-dark font-700 ] [ m-a ]" v-text="headline" />
+        <div v-html="text" class="[ text-below ] [ text-center ] [ m-a ]" />
 
         <SectionGfx class="section-bg-gfx" />
       </div>
@@ -46,10 +46,18 @@ export default {
 
 @include breakpoint-lg {
   .profit-block {
-    min-height: 831px;
+    min-height: 831px + 160px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .headline {
+    max-width: 944px;
+  }
+
+  .text-below {
+    max-width: 768px;
   }
 }
 </style>
