@@ -6,7 +6,7 @@
             <h1 v-text="headline" class="[ font-700 text-dark ]" />
             <div v-html="text" class="text" />
 
-            <a href="#" class="button button--primary">Zarezerwuj termin <i class="button__icon button__icon-radio"></i></a>
+            <a href="#" class="button button--primary button--has-icon">Zarezerwuj termin <span class="button__icon button__icon-circle"><BtnIcoSvg/></span></a>
             <a href="#" class="button button--ghost">Jak to działa?</a>
           </div>
           <div class="col col-right">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import BtnIcoSvg from '../assets/images/icons/ui/btn-ico-circle.svg';
+
 export default {
   name: 'MainTextBlock',
   data() {
@@ -26,6 +28,9 @@ export default {
       text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum ex molestiae minima porro neque blanditiis ratione fuga voluptate vitae quo magni repellendus atque, labore distinctio eius, deserunt esse debitis.</p>'
     }
   },
+  components: {
+    BtnIcoSvg
+  }
 }
 </script>
 

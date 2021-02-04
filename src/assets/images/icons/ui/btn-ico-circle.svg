@@ -1,0 +1,12 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="26.6px" height="26.6px" viewBox="0 0 26.6 26.6" enable-background="new 0 0 26.6 26.6"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<path fill="#FFFFFF" d="M13.3,3c5.7,0,10.3,4.6,10.3,10.3s-4.6,10.3-10.3,10.3S3,18.9,3,13.3S7.6,3,13.3,3 M13.3,0
+		C5.9,0,0,5.9,0,13.3s5.9,13.3,13.3,13.3s13.3-5.9,13.3-13.3S20.6,0,13.3,0L13.3,0z" class="outer"/>
+</g>
+<circle fill="transparent" cx="13.3" cy="13.3" r="8" class="inner"/>
+</svg>
