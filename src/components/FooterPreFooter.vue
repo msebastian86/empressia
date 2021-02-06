@@ -81,6 +81,12 @@ hr {
   }
 }
 
+.pre-footer__grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 @include breakpoint-lg {
   .pre-footer {
     margin-top: 112px;

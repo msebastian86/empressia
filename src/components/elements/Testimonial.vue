@@ -112,7 +112,7 @@ export default {
           min-height: 100%;
         }
 
-        &:hover {
+        &:hover, &:focus {
           .img-wrapper__cover {
             transform: translateX(-105%);
           }

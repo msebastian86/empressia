@@ -1,5 +1,5 @@
 <template>
-    <div id="page-home">
+    <div id="page-home" class="page-content">
         <BurgerMenu :menuItems="menuItems" class="d-lg-none"/>
         <Header :menuItems="menuItems" class="d-none d-lg-block"/>
         <main>
@@ -63,4 +63,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.page-content {
+  padding-top: 70px;
+}
+
+@include breakpoint-lg {
+  .page-content {
+    padding-top: 0;
+  }
+}
 </style>

@@ -86,6 +86,7 @@ export default {
 <style scoped lang="scss">
 
 .swiper-container--testimonials {
+  padding: 0 map-get($gutters, sm) 0 map-get($gutters, sm);
   margin: 0 0 40px 0;
 }
 
@@ -162,6 +163,12 @@ export default {
 }
 
 
+@include breakpoint-md {
+  .swiper-container--testimonials {
+    padding: 0 map-get($gutters, md) 0 map-get($gutters, md);
+  }
+}
+
 @include breakpoint-lg {
   .headline {
     margin-bottom: 56px;
@@ -204,6 +211,7 @@ export default {
   }
 
   .swiper-container--testimonials {
+    padding: 0;
     margin-bottom: 56px;
   }
 }

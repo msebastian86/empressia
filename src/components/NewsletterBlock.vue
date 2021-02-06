@@ -48,9 +48,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .newsletter-body {
-  padding: 40px;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 17px 24px 30px 0 rgba(39,33,99,0.12);
+
+  .button {
+    width: 100%;
+  }
+}
+
+@include breakpoint-md {
+  .newsletter-body {
+    .button {
+      width: auto;
+    }
+  }
 }
 
 @include breakpoint-lg {
@@ -60,6 +72,10 @@ export default {
     position: relative;
     overflow: hidden;
     box-shadow: 24px 32px 56px 0 rgba(39,33,99,0.12);
+
+    .button {
+      width: auto;
+    }
 
     h2 {
       max-width: 469px;

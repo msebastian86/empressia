@@ -85,6 +85,10 @@ export default {
       font-size: 14px;
       line-height: 15px;
       font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &:last-of-type {

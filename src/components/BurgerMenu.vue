@@ -1,5 +1,7 @@
 <template>
   <nav class="burger-menu">
+      <a href="#" title="Go to top"><LogoSvg alt="Logo" class="[ burger-menu__logo ]" /></a>
+
       <div class="burger-menu__body" :aria-hidden="`${isMenuClosed}`" role="navigation">
         <div class="[ burger-menu__container ] [ grid-container ]">
           <ul class="burger-menu__list">
@@ -21,6 +23,7 @@
 
 <script>
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import LogoSvg from '../assets/images/icons/logos/logo_empressiaColor.svg';
 
 export default {
   name: 'BurgerMenu',
@@ -31,6 +34,9 @@ export default {
     return {
       isMenuClosed: true,
     }
+  },
+  components: {
+    LogoSvg
   },
   methods: {
       toggleBurgerMenu: function(e) {
@@ -63,6 +69,14 @@ export default {
     transform: translateY(-100px);
     opacity: 1;
   }
+}
+
+.burger-menu__logo {
+  position: fixed;
+  width: 200px;
+  left: map-get($gutters, sm);
+  top: 22px;
+  z-index: map-get($zindex, burger-menu) + 5;
 }
 
 .burger-menu__burger {

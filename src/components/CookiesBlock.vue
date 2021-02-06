@@ -77,6 +77,8 @@ export default {
   margin: 0 auto;
   animation: slide-in-bottom 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.7s both;
   position: relative;
+  font-size: 0.85rem;
+  line-height: 1.5;
 
   .close {
     position: absolute;
@@ -99,6 +101,7 @@ export default {
 @include breakpoint-lg {
   .cookies-block--message {
     max-width: 812px;
+    font-size: 1rem;
   }
 }
 </style>

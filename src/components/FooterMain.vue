@@ -5,8 +5,8 @@
         <p v-text="bottomText" class="text-over-menu" />
 
         <nav class="footer-main__bottom-navigation">
-          <ul class="menu">
-            <li v-for="(item, index) in menuItems">
+          <ul class="menu-top">
+            <li v-for="(item, index) in menuItems" :key="index">
               <a :href="item.link" v-text="item.title" />
             </li>
           </ul>
@@ -15,20 +15,22 @@
 
       <div class="[ column-right ]">
         <nav class="footer-main__bottom-navigation-side footer-main__bottom-navigation-side-first">
-          <p v-text="nav1.headline" class="[ large font-700 text-blue ]" />
+          <p v-text="nav1.headline" class="[ large font-700 text-blue ] [ d-none d-md-block ]" />
+          <p class="[ mobile-toggler ] [ large font-700 text-blue ] [ d-md-none ] hidden-on-mobile" @click="toggleElementClass($event, {class: 'hidden-on-mobile', element: 'menu-side-1'})">{{ nav1.headline }} <DownSvg class="pointer"/></p>
 
-          <ul class="menu-side">
-            <li v-for="(item, index) in nav1.elements">
+          <ul class="[ menu-side ] hidden-on-mobile" ref="menu-side-1">
+            <li v-for="(item, index) in nav1.elements" :key="index">
               <a href="#" v-text="item" />
             </li>
           </ul>
         </nav>
 
         <nav class="footer-main__bottom-navigation-side footer-main__bottom-navigation-side-second">
-          <p v-text="nav2.headline" class="[ large font-700 text-blue ]" />
+          <p v-text="nav2.headline" class="[ large font-700 text-blue ] [ d-none d-md-block ]" />
+          <p class="[ mobile-toggler ] [ large font-700 text-blue ] [ d-md-none ] hidden-on-mobile" @click="toggleElementClass($event, {class: 'hidden-on-mobile', element: 'menu-side-2'})">{{ nav2.headline }} <DownSvg class="pointer"/></p>
 
-          <ul class="menu-side">
-            <li v-for="(item, index) in nav2.elements">
+          <ul class="[ menu-side ] hidden-on-mobile" ref="menu-side-2">
+            <li v-for="(item, index) in nav2.elements" :key="index">
               <a href="#" v-text="item" />
             </li>
           </ul>
@@ -39,7 +41,7 @@
 </template>
 
 <script>
-// import LogoEmpressia from '../assets/images/icons/logos/mark_empressiaColor.svg';
+import DownSvg from '@/assets/images/icons/ui/chevron-down.svg';
 
 export default {
   name: 'HelloWorld',
@@ -47,7 +49,17 @@ export default {
     menuItems: Array
   },
   components: {
-    // LogoEmpressia
+    DownSvg
+  },
+  methods: {
+    toggleElementClass($event, options) {
+      const el = this.$refs[options.element];
+
+      if (el && options.class.length) {
+        $event.target.classList.toggle(options.class);
+        el.classList.toggle(options.class);
+      }
+    }
   },
   data() {
     return {
@@ -62,10 +74,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .footer-main {
-  padding: 30px 0 40px 0;
+  padding: 30px 0 20px 0;
 }
 
-.menu {
+.menu-top {
   @extend .reset-list;
   display: flex;
   align-content: baseline;
@@ -81,6 +93,10 @@ export default {
       font-size: 14px;
       line-height: 15px;
       font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &:last-of-type {
@@ -101,15 +117,70 @@ export default {
       color: map-get($colors, blue-text);
       text-decoration: none;
       font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
+
+.column-right {
+  margin-top: 30px;
+}
+
+.mobile-toggler {
+  display: inline-block;
+  position: relative;
+  padding-right: 30px;
+  cursor: pointer;
+
+  .pointer {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 0;
+    top: calc(50% - 6px);
+    transition: transform 200ms ease;
+    transform: rotate(-90deg);
+  }
+}
+
+.hidden-on-mobile {
+  &.mobile-toggler {
+    .pointer {
+      transform: rotate(0deg);
+    }
+  }
+
+  &.menu-side {
+    display: none;
+  }
+}
+
 
 @include breakpoint-md {
   .column-right {
     @include grid(2, $gutter-horizontal: 16px);
   }
+
+  .mobile-toggler {
+    display: none;
+  }
+
+  .menu-side {
+    margin-bottom: 0;
+  }
+
+  .hidden-on-mobile {
+    &.menu-side {
+      display: block;
+    }
+  }
 }
+
 
 @include breakpoint-lg {
   .footer-main {
@@ -129,7 +200,7 @@ export default {
     margin-right: auto;
   }
 
-  .menu {
+  .menu-top {
     margin-top: 64px;
   }
 }

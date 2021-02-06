@@ -1,10 +1,10 @@
 <template>
   <section class="accordeon accordeon--primary" :aria-hidden="`${isClosed}`" ref="accordeon">
-      <a href="#" class="accordeon__title" @click="toggleAccordeon">
-          {{ title }}
-          <DownSvg class="pointer" />
-      </a>
-      <div href="#" v-html="text" class="accordeon__content" />
+        <a href="#" class="accordeon__title" @click="toggleAccordeon">
+            {{ title }}
+            <DownSvg class="pointer" />
+        </a>
+        <div href="#" v-html="text" class="accordeon__content" />
   </section>
 </template>
 
@@ -56,6 +56,8 @@ export default {
         padding: 16px 38px 16px 16px;
         font-weight: bold;
         position: relative;
+        font-size: 16px;
+        line-height: 25px;
 
         .pointer {
             width: 12px;
@@ -132,6 +134,8 @@ export default {
         &__title {
             min-height: 92px;
             padding: 32px 60px 32px 32px;
+            font-size: 18px;
+            line-height: 28px;
 
             .pointer {
                 right: 27px;

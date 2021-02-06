@@ -7,7 +7,7 @@
 
           <a href="#" class="button button--ghost">Sprawdź całe FAQ</a>
 
-          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag" class="block-image">
+          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag" class="[ block-image ] [ d-none d-lg-block ]">
         </div>
         <div class="[ col-right ]">
           <ul class="[ faq-list ] [ reset-list ]">
@@ -45,7 +45,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .faq-block {
-    padding: 40px 0 32px 0;
+    padding: 40px 0 40px 0;
+}
+
+.col-left {
+  padding-bottom: 40px;
 }
 
 @include breakpoint-lg {
@@ -55,6 +59,7 @@ export default {
   }
 
   .col-left {
+    padding-bottom: 0;
     padding-right: 32px;
 
     .block-image {
