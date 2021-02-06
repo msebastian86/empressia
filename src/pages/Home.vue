@@ -1,6 +1,7 @@
 <template>
     <div id="page-home">
-        <Header :menuItems="menuItems"/>
+        <BurgerMenu :menuItems="menuItems" class="d-lg-none"/>
+        <Header :menuItems="menuItems" class="d-none d-lg-block"/>
         <main>
           <MainTextBlock />
           <ProfitBlock />
@@ -27,6 +28,7 @@ import IconBlock from '../components/IconBlock.vue'
 import NewsletterBlock from '../components/NewsletterBlock.vue'
 import Footer from '../components/Footer.vue'
 import CookiesBlock from '../components/CookiesBlock.vue'
+import BurgerMenu from '../components/BurgerMenu.vue'
 
 export default {
   name: 'Home',
@@ -39,7 +41,8 @@ export default {
     IconBlock,
     NewsletterBlock,
     Footer,
-    CookiesBlock
+    CookiesBlock,
+    BurgerMenu
   },
   props: {
     msg: String

@@ -1,5 +1,5 @@
 <template>
-  <section class="accordeon accordeon--primary" :aria-closed="`${isClosed}`" ref="accordeon">
+  <section class="accordeon accordeon--primary" :aria-hidden="`${isClosed}`" ref="accordeon">
       <a href="#" class="accordeon__title" @click="toggleAccordeon">
           {{ title }}
           <DownSvg class="pointer" />
@@ -78,13 +78,13 @@ export default {
         }
     }
 
-    &[aria-closed="true"] {
+    &[aria-hidden="true"] {
         .accordeon__content {
             display: none;
         }
     }
 
-    &[aria-closed="false"] {
+    &[aria-hidden="false"] {
         .accordeon__title {
             .pointer {
                 transform: rotate(180deg);
@@ -112,7 +112,7 @@ export default {
             background: white;
         }
 
-        &[aria-closed="false"] {
+        &[aria-hidden="false"] {
             .accordeon__title {
                 background-color: white;
                 color: map-get($colors, blue);

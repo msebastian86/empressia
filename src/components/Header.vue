@@ -7,7 +7,7 @@
 
             <ul class="menu">
               <li v-for="(item, index) in menuItems" :key="`${index} ${Math.random()}`">
-                <a :href="item.link" :title="item.title" v-text="item.title" />
+                <a :href="item.link" v-text="item.title" />
               </li>
             </ul>
           </div>
@@ -29,7 +29,7 @@ export default {
     menuItems: Array
   },
   components: {
-    LogoSvg
+    LogoSvg,
   },
   mounted() {
     this.stickyHeaderEvents();
@@ -53,8 +53,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
-
 .header {
   padding: 20px 0;
   position: sticky;

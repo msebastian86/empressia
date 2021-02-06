@@ -11,9 +11,9 @@ $container-widths: (
 );
 
 $gutters: (
-  sm: 16,
-  md: 16,
-  lg: 16,
+  sm: 16px,
+  md: 16px,
+  lg: 16px,
 );
 
 .grid-container {
@@ -33,8 +33,8 @@ $gutters: (
           2;
       }
 
-      padding-left: map-get($gutters, $breakpoint) + px;
-      padding-right: map-get($gutters, $breakpoint) + px;
+      padding-left: map-get($gutters, $breakpoint);
+      padding-right: map-get($gutters, $breakpoint);
     }
 
     .row-#{$breakpoint}-2 {

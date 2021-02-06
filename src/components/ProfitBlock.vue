@@ -102,18 +102,11 @@ export default {
       opacity: 0;
       transition: all 0.8s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 
-      &:nth-of-type(1) { transition-delay: 100ms;}
-      &:nth-of-type(2) { transition-delay: 200ms;}
-      &:nth-of-type(3) { transition-delay: 300ms;}
-      &:nth-of-type(4) { transition-delay: 400ms;}
-      &:nth-of-type(5) { transition-delay: 500ms;}
-      &:nth-of-type(6) { transition-delay: 600ms;}
-      &:nth-of-type(7) { transition-delay: 700ms;}
-      &:nth-of-type(8) { transition-delay: 800ms;}
-      &:nth-of-type(9) { transition-delay: 900ms;}
-      &:nth-of-type(10) { transition-delay: 1000ms;}
-      &:nth-of-type(11) { transition-delay: 1100ms;}
-
+      @for $i from 1 through 15 {
+        &:nth-of-type(#{$i}) {
+          transition-delay: #{$i * 100}ms;
+        }
+      }
     }
 
     &.visible {
