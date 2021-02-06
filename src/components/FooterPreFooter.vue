@@ -6,11 +6,11 @@
       </div>
       <div class="pre-footer__right">
         <div class="right-wrapper">
-          <div class="[ right-wrapper__left ] [ d-none d-lg-flex ]">
+          <div class="[ right-wrapper__left ] [ d-none d-md-flex ]">
             <Rank :rank="5" :color="'green-dark'">
               <template v-slot:after>
                 <small>5.0 (163 opinie) na</small>
-                <img src="../assets/images/icons/logos/logo_znanylekarzColor.png" class="logo-right" alt="Znany lekarz logo" />
+                <v-lazy-image :src="require('@/assets/images/icons/logos/logo_znanylekarzColor.png')" class="logo-right" alt="Znany lekarz logo" />
               </template>
             </Rank>
           </div>
@@ -87,18 +87,12 @@ hr {
   justify-content: space-between;
 }
 
-@include breakpoint-lg {
-  .pre-footer {
-    margin-top: 112px;
-    padding: 40px 0 0;
-  }
+@include breakpoint-md {
+.pre-footer__grid {
+  align-items: center;
+}
 
-  .pre-footer__grid {
-    @include grid(2, 'flex-start', $gutter-horizontal: 16px);
-    align-items: center;
-  }
-
-  .right-wrapper {
+.right-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -110,4 +104,17 @@ hr {
     }
   }
 }
+
+@include breakpoint-lg {
+  .pre-footer {
+    margin-top: 112px;
+    padding: 40px 0 0;
+  }
+
+  .pre-footer__grid {
+    @include grid(2, 'flex-start', $gutter-horizontal: 16px);
+    align-items: center;
+  }
+}
+
 </style>

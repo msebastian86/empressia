@@ -2,6 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueFilterDateFormat from "@vuejs-community/vue-filter-date-format";
 import VueObserveVisibility from "vue-observe-visibility";
+import { VLazyImagePlugin } from "v-lazy-image";
+
+Vue.use(VLazyImagePlugin);
 Vue.use(VueObserveVisibility);
 
 Vue.use(VueFilterDateFormat, {

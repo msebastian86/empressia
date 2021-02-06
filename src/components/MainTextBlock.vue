@@ -10,7 +10,7 @@
             <a href="#" class="button button--ghost">Jak to działa?</a>
           </div>
           <div class="col col-right">
-            <img src="../assets/images/home/illustration-hero.png" alt="Alt tag" class="[ block-image ] [ img-fluid ]">
+            <v-lazy-image :src="require('@/assets/images/home/illustration-hero.png')" alt="Alt tag" class="[ block-image ] [ img-fluid ]" />
           </div>
         </div>
       </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import BtnIcoSvg from '../assets/images/icons/ui/btn-ico-circle.svg';
+import BtnIcoSvg from '@/assets/images/icons/ui/btn-ico-circle.svg';
 
 export default {
   name: 'MainTextBlock',

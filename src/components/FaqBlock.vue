@@ -7,7 +7,7 @@
 
           <a href="#" class="button button--ghost">Sprawdź całe FAQ</a>
 
-          <img src="../assets/images/home/illustration-faq.png" alt="Alt tag" class="[ block-image ] [ d-none d-lg-block ]">
+          <v-lazy-image :src="require('@/assets/images/home/illustration-faq.png')" alt="Alt tag" class="[ block-image ] [ d-none d-lg-block ]" />
         </div>
         <div class="[ col-right ]">
           <ul class="[ faq-list ] [ reset-list ]">

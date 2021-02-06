@@ -7,8 +7,8 @@
       }">
       <div class="grid-container">
         <div class="logos-wrapper">
-          <img src="../assets/images/home/contact-skype.png" alt="Skype logo" class="logos-wrapper__logo">
-          <img src="../assets/images/home/contact-whatsapp.png" alt="Whatsapp logo" class="logos-wrapper__logo">
+          <v-lazy-image :src="require('@/assets/images/home/contact-skype.png')" alt="Skype logo" class="logos-wrapper__logo" />
+          <v-lazy-image :src="require('@/assets/images/home/contact-whatsapp.png')" alt="Whatsapp logo" class="logos-wrapper__logo" />
         </div>
         <h2 class="[ headline ] [ text-center text-dark font-700 ] [ m-a ]" v-text="headline" />
         <div v-html="text" class="[ text-below ] [ text-center ] [ m-a ]" />
@@ -21,7 +21,7 @@
 
 <script>
 import ProfitBlockImage from './ProfitBlockImage'
-import ProfitBlockImageBgDots from '../assets/images/home/section-profit--dots.svg';
+import ProfitBlockImageBgDots from '@/assets/images/home/section-profit--dots.svg';
 
 export default {
   name: 'ProfitBlock',

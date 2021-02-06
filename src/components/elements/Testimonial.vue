@@ -15,7 +15,7 @@
       <cite class="testimonial__cite" ref="cite">
         <div class="img-wrapper">
           <EyeSvg class="img-wrapper__cover" />
-          <img :src="testimonial.avatar" alt="avatar alt">
+          <v-lazy-image :src="testimonial.avatar" alt="avatar alt" />
         </div>
         <p v-text="testimonial.name" />
       </cite>
@@ -65,6 +65,7 @@ export default {
       display: inline-flex;
       align-items: center;
       justify-content: flex-end;
+      text-align: right;
     }
 
    .testimonial__text {
