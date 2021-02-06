@@ -2,15 +2,18 @@
   <section class="profit-block" ref="profit" v-observe-visibility="{
         callback: visibilityChanged,
         intersection: {
-          threshold: 0.65,
+          threshold: 0.55,
         },
       }">
       <div class="grid-container">
+        <div class="logos-wrapper">
+          <img src="../assets/images/home/contact-skype.png" alt="Skype logo" class="logos-wrapper__logo">
+          <img src="../assets/images/home/contact-whatsapp.png" alt="Whatsapp logo" class="logos-wrapper__logo">
+        </div>
         <h2 class="[ headline ] [ text-center text-dark font-700 ] [ m-a ]" v-text="headline" />
         <div v-html="text" class="[ text-below ] [ text-center ] [ m-a ]" />
 
         <ProfitBlockImage class="section-bg-gfx" />
-
         <ProfitBlockImageBgDots class="section-bg-gfx" />
       </div>
   </section>
@@ -50,6 +53,20 @@ export default {
   margin-bottom: 24px;
 }
 
+.logos-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  position: relative;
+  left: 22px;
+
+  .logos-wrapper__logo {
+    margin-left: -22px;
+    max-width: 135px;
+  }
+}
+
 .profit-block {
   position: relative;
 
@@ -58,12 +75,19 @@ export default {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    // z-index: -1;
-    z-index: 2;
+    z-index: -1;
+  }
+
+  /deep/ .pop-out {
+    will-change: opacity, transform;
   }
 }
 
 @include breakpoint-lg {
+  .logos-wrapper {
+    margin-bottom: 35px;
+  }
+
   .profit-block {
     min-height: 831px + 160px;
     display: flex;

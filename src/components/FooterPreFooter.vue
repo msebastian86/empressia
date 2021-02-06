@@ -7,7 +7,12 @@
       <div class="pre-footer__right">
         <div class="right-wrapper">
           <div class="[ right-wrapper__left ] [ d-none d-lg-flex ]">
-            <Rank :rank="5" :color="'green-dark'" /> <small>5.0 (163 opinie) na</small> <img src="../assets/images/icons/logos/logo_znanylekarzColor.png" class="logo-right" alt="Znany lekarz logo" />
+            <Rank :rank="5" :color="'green-dark'">
+              <template v-slot:after>
+                <small>5.0 (163 opinie) na</small>
+                <img src="../assets/images/icons/logos/logo_znanylekarzColor.png" class="logo-right" alt="Znany lekarz logo" />
+              </template>
+            </Rank>
           </div>
           <div class="right-wrapper__right">
             <div class="icons">

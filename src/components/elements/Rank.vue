@@ -3,6 +3,8 @@
         <span v-for="index in 5" :key="index" :class="`star ${color}`">
             <StarSvg :class="(index > rank) ? 'off' : ''" />
         </span>
+
+        <slot name="after"></slot>
   </div>
 </template>
 

@@ -109,11 +109,12 @@ export default {
   }
 
   .swiper-pagination--testimonials {
+    position: relative;
     z-index: 0;
     background: transparent;
     white-space: nowrap;
     line-height: 0;
-    margin: 0 0 40px 0;
+    margin: 0;
 
     /deep/ .swiper-pagination-bullet{
       outline: none;
