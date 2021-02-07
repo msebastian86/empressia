@@ -36,11 +36,11 @@ export default {
       swiper: null,
       headline: 'Co mówią zadowoleni klienci',
       testimonials: [
-        { rank: 3, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. dolor, sit amet consectetur dolor, sit amet consectetur fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
-        { rank: 5, date: new Date(), text: 'Lorem dolor, sit amet consectetur dolor, sit amet consectetur dolor, sit amet consectetur ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
-        { rank: 4, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
-        { rank: 2, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
-        { rank: 5, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'https://loremflickr.com/640/360', name: 'Maria' },
+        { rank: 3, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. dolor, sit amet consectetur dolor, sit amet consectetur fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'avatar.jpg', name: 'Maria' },
+        { rank: 5, date: new Date(), text: 'Lorem dolor 2, sit amet consectetur dolor, sit amet consectetur dolor, sit amet consectetur ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'avatar.jpg', name: 'Maria' },
+        { rank: 1, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'avatar.jpg', name: 'Maria' },
+        { rank: 2, date: new Date(), text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'avatar.jpg', name: 'Maria' },
+        { rank: 5, date: new Date(), text: 'Lorem ipsum dolor 5, sit amet consectetur adipisicing elit. Libero fugit quis, possimus voluptate eos minima saepe quaerat aliquam ea nobis', avatar: 'avatar.jpg', name: 'Maria' },
       ]
     }
   },
@@ -61,12 +61,12 @@ export default {
           el: '.swiper-pagination--testimonials',
           clickable: true
         },
+         preloadImages: true,
         breakpoints: {
           1024: {
-            centeredSlides: true,
+            centeredSlides: false,
             slidesPerView: 5,
             spaceBetween: 32,
-            loopAdditionalSlides: 5,
           }
         },
         on: {

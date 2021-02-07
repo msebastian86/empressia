@@ -13,9 +13,10 @@
       </div>
 
       <cite class="testimonial__cite" ref="cite">
+
         <div class="img-wrapper">
           <EyeSvg class="img-wrapper__cover" />
-          <v-lazy-image :src="testimonial.avatar" alt="avatar alt" />
+          <v-lazy-image :src="require(`@/assets/images/home/${testimonial.avatar}`)" alt="avatar alt" />
         </div>
         <p v-text="testimonial.name" />
       </cite>
