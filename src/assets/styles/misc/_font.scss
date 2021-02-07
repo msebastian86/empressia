@@ -30,14 +30,23 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "SFNS Display";
+  src: local("SFNS Display"),
+    url("~@/assets/fonts/sfns_display_regular-webfont.woff2") format("woff2"),
+    url("~@/assets/fonts/sfns_display_regular-webfont.woff") format("woff"),
+    url("~@/assets/fonts/sfns_display_regular-webfont.ttf") format("ttf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+}
+
 .font-all-round-gothic {
   font-family: "all-round-gothic", sans-serif;
 }
 
 .font-sfnsd {
-  // TODO ADD PROPPER FONT
-  // font-family: "SFNSDisplay";
-  font-family: "Comfortaa";
+  font-family: "SFNS Display";
 }
 
 body {
@@ -53,6 +62,7 @@ body {
   h5,
   h6 {
     @extend .font-all-round-gothic;
+    margin-bottom: 15px;
   }
 
   small {
@@ -168,7 +178,7 @@ p {
     color: map-get($colors, blue);
     text-decoration: underline;
     text-underline-offset: 6px;
-    text-decoration-color: map-get($colors, gray-medium);
+    text-decoration-color: transparent;
 
     &:hover {
       color: map-get($colors, blue);

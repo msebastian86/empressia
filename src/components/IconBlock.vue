@@ -6,7 +6,7 @@
             <div class="icons-list__icon-container">
               <component :is="icon.iconUrl" />
             </div>
-            <h5 v-text="icon.headline" class="[ font-sfnsd text-dark font-700 ]"/>
+            <h5 v-text="icon.headline" class="[ icons-list__headline ] [ font-sfnsd text-dark font-700 ]"/>
             <p v-text="icon.text" />
           </li>
         </ul>
@@ -80,6 +80,10 @@ export default {
       max-height: 80%;
     }
   }
+
+  .icons-list__headline {
+    margin-bottom: 5px;
+  }
 }
 
 @include breakpoint-lg {
@@ -88,7 +92,7 @@ export default {
   }
 
   .icons-row-section {
-    padding: 136px 0;
+    padding: 136px 0 120px 0;
   }
 
   .icons-list__wrapper {

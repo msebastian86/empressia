@@ -175,7 +175,7 @@ export default {
   }
 
   .testimonials {
-    padding: 128px 0 96px 0;
+    padding: 128px 0 90px 0;
     max-width: $blocks-max-width;
     margin: 0 auto;
     overflow: hidden;
@@ -212,7 +212,7 @@ export default {
 
   .swiper-container--testimonials {
     padding: 0;
-    margin-bottom: 56px;
+    margin-bottom: 46px;
   }
 }
 </style>

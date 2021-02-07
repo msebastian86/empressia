@@ -58,11 +58,11 @@ h1 {
 
 @include breakpoint-lg {
   .main-text-block {
-    padding: 101px 0 160px;
+    padding: 128px 0 160px;
   }
 
   .text-block {
-    margin-bottom: 56px;
+    margin-bottom: 39px;
   }
 
   .row-main {
@@ -83,12 +83,11 @@ h1 {
         width: 100%;
         max-width: 696px;
         right: -11.5%;
+        top: -80px;
       }
     }
   }
-}
 
-@include breakpoint-lg {
   .main-text-block {
     overflow-x: hidden;
   }

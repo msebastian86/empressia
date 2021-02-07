@@ -5,17 +5,19 @@
         <p v-text="bottomText" class="text-over-menu" />
 
         <nav class="footer-main__bottom-navigation">
-          <ul class="menu-top">
-            <li v-for="(item, index) in menuItems" :key="index">
-              <a :href="item.link" v-text="item.title" />
-            </li>
+          <ul class="[ menu-top ]">
+            <div class="[ menu-top__body ] [ hide-scrollbar ]">
+              <li v-for="(item, index) in menuItems" :key="index">
+                <a :href="item.link" v-text="item.title" />
+              </li>
+            </div>
           </ul>
         </nav>
       </div>
 
       <div class="[ column-right ]">
         <nav class="footer-main__bottom-navigation-side footer-main__bottom-navigation-side-first">
-          <p v-text="nav1.headline" class="[ large font-700 text-blue ] [ d-none d-md-block ]" />
+          <p v-text="nav1.headline" class="[ side-menu-title ] [ large font-700 text-blue ] [ d-none d-md-block ]" />
           <p class="[ mobile-toggler ] [ large font-700 text-blue ] [ d-md-none ] hidden-on-mobile" @click="toggleElementClass($event, {class: 'hidden-on-mobile', element: 'menu-side-1'})">{{ nav1.headline }} <DownSvg class="pointer"/></p>
 
           <ul class="[ menu-side ] hidden-on-mobile" ref="menu-side-1">
@@ -26,7 +28,7 @@
         </nav>
 
         <nav class="footer-main__bottom-navigation-side footer-main__bottom-navigation-side-second">
-          <p v-text="nav2.headline" class="[ large font-700 text-blue ] [ d-none d-md-block ]" />
+          <p v-text="nav2.headline" class="[ side-menu-title ] [ large font-700 text-blue ] [ d-none d-md-block ]" />
           <p class="[ mobile-toggler ] [ large font-700 text-blue ] [ d-md-none ] hidden-on-mobile" @click="toggleElementClass($event, {class: 'hidden-on-mobile', element: 'menu-side-2'})">{{ nav2.headline }} <DownSvg class="pointer"/></p>
 
           <ul class="[ menu-side ] hidden-on-mobile" ref="menu-side-2">
@@ -79,13 +81,28 @@ export default {
 
 .menu-top {
   @extend .reset-list;
-  display: flex;
-  align-content: baseline;
-  justify-content: flex-start;
+  height: 2em;
+  overflow-y: hidden;
+  position: relative;
+
+  .menu-top__body {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    left: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    white-space: nowrap;
+  }
 
   li {
     margin: 0 24px 0 0;
     padding: 0;
+    display: inline-flex;
+    align-items: center;
 
     a {
       color: map-get($colors, dark);
@@ -110,10 +127,11 @@ export default {
   margin-bottom: 16px;
 
   li {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
+
     a {
-      font-size: 14px;
-      line-height: 24px;
-      margin-bottom: 12px;
       color: map-get($colors, blue-text);
       text-decoration: none;
       font-weight: bold;
@@ -184,7 +202,7 @@ export default {
 
 @include breakpoint-lg {
   .footer-main {
-    padding: 64px 0 80px 0;
+    padding: 64px 0 68px 0;
   }
 
   .column-right {
@@ -201,7 +219,11 @@ export default {
   }
 
   .menu-top {
-    margin-top: 64px;
+    margin-top: 54px;
+  }
+
+  .side-menu-title {
+    margin-bottom: 24px;
   }
 }
 </style>

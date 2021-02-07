@@ -65,7 +65,8 @@ export default {
     .block-image {
       max-width: 100%;
       max-width: 657px;
-      margin-left: -11.5%;
+      margin-left: -29.5%;
+      margin-top: 25px;
     }
 
     h4 {

@@ -62,7 +62,7 @@ export default {
   }
 
   .footer__bottom {
-    padding: 40px 0 64px 0;
+    padding: 33px 0 64px 0;
   }
 
   .footer__bottom--container {

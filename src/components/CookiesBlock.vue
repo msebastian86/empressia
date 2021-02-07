@@ -2,8 +2,10 @@
   <section class="cookies-block" v-if="isMsgVisible">
       <div class="grid-container">
         <div class="cookies-block--message">
-          <small>Ta strona korzysta z <a href="#">ciasteczek</a>. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</small>
-          <span @click="closeCookie" title="Close" class="close"><CloseSvg /></span>
+          <p>
+            <small>Ta strona korzysta z <a href="#">ciasteczek</a>. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</small>
+            <span @click="closeCookie" title="Close" class="close"><CloseSvg /></span>
+          </p>
         </div>
       </div>
   </section>
@@ -72,13 +74,17 @@ export default {
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.12);
   background: white;
-  padding: 17px 48px 14px 24px;
+  padding: 18px 48px 14px 24px;
   min-height: 64px;
   margin: 0 auto;
   animation: slide-in-bottom 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.7s both;
   position: relative;
   font-size: 0.85rem;
   line-height: 1.5;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 
   .close {
     position: absolute;
